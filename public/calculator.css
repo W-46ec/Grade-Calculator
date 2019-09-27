@@ -1,0 +1,121 @@
+
+/* calculator.css */
+
+body {
+	background: #7e171d;
+	/*background: #a6192e;*/
+	margin-top: 0px;
+}
+
+.central-column {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.gray-divider {
+	background: #3d3935;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	position: relative;
+}
+
+.main-page {
+	background: #ffffff;
+	padding: 2%;
+	padding-top: 5%;
+	padding-bottom: 4%;
+}
+
+.main {
+	background: #e9eff1;
+	position: relative;
+	padding-left: 2%;
+	margin-top: 1.5em;
+	margin-right: 30%;
+}
+
+.h2 {
+	font-weight: normal;
+	font-size: 1.75em;
+}
+
+.font-red {
+	color: #a6192e;
+	font-weight: bold;
+	font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+}
+
+.font {
+	font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+}
+
+table {
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+	margin-right: 1em;
+	position: relative;
+}
+
+th, td {
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+	padding-left: 1%;
+	font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+}
+
+th {
+	font-weight: bold;
+	width: 12em;
+	text-align: left;
+	background-color: #dddddd;
+}
+
+td {
+	padding-top: 0.6%;
+	padding-bottom: 0.6%;
+}
+
+input {
+	width: 50%;
+	height: 50%;
+	padding: 2%;
+	margin: 3px;
+	font-size: 20px;
+}
+
+.mean-result, .weighted-result {
+	/*display: inline-block;*/
+	display: none;
+	padding-top: 1em;
+	padding-left: 2em;
+	padding-bottom: 1em;
+	font-size: 18px;
+	color: #888888;
+	font-family: "dinWeb", sans-serif;
+}
+
+.mean-val, .weighted-val {
+	font-family: "dinWeb", sans-serif;
+	color: black;
+}
+
+.button-container {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	right: 0px;
+	padding-bottom: 2%;
+}
+
+.button {
+	background-color: #a6192e;
+	border-radius: 5px;
+	color: #ffffff;
+	margin-right: 1em;
+	padding: 0px;
+	width: 85px;
+	height: 35px;
+	font-weight: bold;
+	font-size: 10px;
+	font-family: "DINWebMedium",sans-serif;
+}

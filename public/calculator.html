@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CourSys - Formula Tester</title>
+	<link rel="stylesheet" type="text/css" href="calculator.css">
+	<script type="text/javascript" src="calculator.js" defer></script>
+</head>
+<body>
+	<div class="central-column">
+		<div class="gray-divider">
+			<div class="main-page">
+				<span class="h2">Grade Calculator</span>
+				<div class="main">
+					<br>
+					<span class="font-red">Activities</span>
+					<br>
+					<br>
+					<span class = "font">Give grades to numeric activities:</span>
+					<br>
+					<br>
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Short Name</th>
+							<th>Weight</th>
+							<th>Grade</th>
+							<th>Percent</th>
+						</tr>
+						<tr>
+							<td>Activity 1</td>
+							<td>A1</td>
+							<td>
+								<input type="text" name="weight">
+							</td>
+							<td>
+								<input type="text" id="g1" name="mean" onfocus="resetColor(this)" onkeyup="getPercentage(this)">
+								<span>/</span>
+								<input type="text" id="g2" name="mean" onfocus="resetColor(this)" onkeyup="getPercentage(this)">
+							</td>
+							<td id="p1"></td>
+						</tr>
+						<tr>
+							<td>Activity 2</td>
+							<td>A2</td>
+							<td>
+								<input type="text" name="weight">
+							</td>
+							<td>
+								<input type="text" id="g3" name="mean" onfocus="resetColor(this)" onkeyup="getPercentage(this)">
+								<span>/</span>
+								<input type="text" id="g4" name="mean" onfocus="resetColor(this)" onkeyup="getPercentage(this)">
+							</td>
+							<td id="p2"></td>
+						</tr>
+						<tr>
+							<td>Activity 3</td>
+							<td>A3</td>
+							<td>
+								<input type="text" name="weight">
+							</td>
+							<td>
+								<input type="text" id="g5" name="mean" onfocus="resetColor(this)" onkeyup="getPercentage(this)">
+								<span>/</span>
+								<input type="text" id="g6" name="mean" onfocus="resetColor(this)" onkeyup="getPercentage(this)">
+							</td>
+							<td id="p3"></td>
+						</tr>
+						<tr>
+							<td>Activity 4</td>
+							<td>A4</td>
+							<td>
+								<input type="text" name="weight">
+							</td>
+							<td>
+								<input type="text" id="g7" name="mean" onfocus="resetColor(this)" onkeyup="getPercentage(this)">
+								<span>/</span>
+								<input type="text" id="g8" name="mean" onfocus="resetColor(this)" onkeyup="getPercentage(this)">
+							</td>
+							<td id="p4"></td>
+						</tr>
+					</table>
+					<br>
+					<span class="font-red">Result</span>
+					<br>
+					<div class="mean-result">
+						<span>MEAN:</span>
+						<br>
+						<span class="mean-val"></span>
+					</div>
+					<br>
+					<div class="weighted-result">
+						<span>WEIGHTED:</span>
+						<br>
+						<span class="weighted-val"></span>
+					</div>
+					<br>
+					<div class="button-container">
+						<button type="button" id="cal-weight" class="button">WEIGHTED</button>
+						<button type="button" id="cal-mean" class="button">MEAN</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
