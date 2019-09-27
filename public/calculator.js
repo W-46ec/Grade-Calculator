@@ -69,10 +69,20 @@ function checkMeanValidation(lst, errIDLst, result) {
 // Desc: Event for the "RESET" button.
 document.getElementById("reset").addEventListener("click", () => {
 	let inputBoxes = document.getElementsByTagName("input")
+	let percents = document.getElementsByName("percent")
+
+	// Clear all the input boxes.
 	for (let i = 0; i < inputBoxes.length; i++) {
 		inputBoxes[i].style.backgroundColor = ""
 		inputBoxes[i].value = ""
 	}
+
+	// Clear the percent column.
+	for (let i = 0; i < percents.length; i++) {
+		percents[i].innerHTML = ""
+	}
+
+	// Make the result panel invisible.
 	document.querySelector("div[class='mean-result']").style.display = "none"
 	document.querySelector("div[class='weighted-result']").style.display = "none"
 })
