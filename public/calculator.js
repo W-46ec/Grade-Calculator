@@ -2,10 +2,10 @@
 // calculator.js
 
 
-// Desc: Resets the color of the input box.
+// Desc: Resets the color of the corresponding input box.
 function resetColor(e) {
 	e.style.backgroundColor = ""
-}
+} // End of resetColor
 
 // Desc: Calculates the percentage of the corresponding row.
 function getPercentage(e) {
@@ -27,7 +27,7 @@ function getPercentage(e) {
 		val = "Error"
 	}
 	document.getElementById(percentId).innerHTML = val
-}
+} // End of getPercentage
 
 // Desc: Check the validation of mean values.
 function checkMeanValidation(lst, errIDLst, result) {
@@ -64,9 +64,20 @@ function checkMeanValidation(lst, errIDLst, result) {
 	}
 	result.push(mean / (parseInt(lst.length / 2)))
 	return ""
-}
+} // End of checkMeanValidation
 
-// Desc: Event for clicking the "WEIGHTED" button.
+// Desc: Event for the "RESET" button.
+document.getElementById("reset").addEventListener("click", () => {
+	let inputBoxes = document.getElementsByTagName("input")
+	for (let i = 0; i < inputBoxes.length; i++) {
+		inputBoxes[i].style.backgroundColor = ""
+		inputBoxes[i].value = ""
+	}
+	document.querySelector("div[class='mean-result']").style.display = "none"
+	document.querySelector("div[class='weighted-result']").style.display = "none"
+})
+
+// Desc: Event for the "WEIGHTED" button.
 document.getElementById("cal-weight").addEventListener("click", (e) => {
 	let mean = document.getElementsByName("mean")
 	let weights = document.getElementsByName("weight")
@@ -128,7 +139,7 @@ document.getElementById("cal-weight").addEventListener("click", (e) => {
 	}
 })
 
-// Desc: Event for clicking the "MEAN" button.
+// Desc: Event for the "MEAN" button.
 document.getElementById("cal-mean").addEventListener("click", () => {
 	let inputs = document.getElementsByName("mean")
 	let errIDLst = [], result = []
