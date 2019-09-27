@@ -19,14 +19,14 @@ body {
 	position: relative;
 }
 
-.main-page {
+.main-panel {
 	background: #ffffff;
 	padding: 2%;
 	padding-top: 5%;
 	padding-bottom: 4%;
 }
 
-.main {
+.container {
 	background: #e9eff1;
 	position: relative;
 	padding-left: 2%;
