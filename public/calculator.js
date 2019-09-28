@@ -66,10 +66,41 @@ function checkMeanValidation(lst, errIDLst, result) {
 	return ""
 } // End of checkMeanValidation
 
+// Desc: Add one row to the bottom of the table.
+function addOneRow() {
+	let table = document.getElementById("table")
+	let id = table.rows.length
+	let newRow = table.rows[id - 1].cloneNode(true)
+	newRow.children[0].innerHTML = "Activity " + id.toString()	// Name
+	newRow.children[1].innerHTML = "A" + id.toString()	// Short Name
+	newRow.children[2].children[0].value = ""	// Clear weight
+	newRow.children[2].children[0].style.backgroundColor = ""	// Clear weight color
+	newRow.children[3].children[0].id = "g" + (2 * id - 1).toString()	// Grade 1
+	newRow.children[3].children[0].value = ""	// Clear grade 1
+	newRow.children[3].children[0].style.backgroundColor = ""	// Clear grade 1 color
+	newRow.children[3].children[2].id = "g" + (2 * id).toString()	// Grade 2
+	newRow.children[3].children[2].value = ""	// Clear grade 2
+	newRow.children[3].children[2].style.backgroundColor = ""	// Clear grade 2 color
+	newRow.children[4].id = "p" + id.toString()	// Percent
+	newRow.children[4].innerHTML = ""	// Clear percent
+	table.appendChild(newRow)
+} // End of addOneRow
+
+// Desc: Remove the last row from the table.
+//  Pre: There are more than 1 rows in the table.
+function removeOneRow() {
+	let table = document.getElementById("table")
+	let rowsCount = table.rows.length - 1
+	if (rowsCount > 1) {	// Remove only when there is more than 1 activity.
+		table.deleteRow(rowsCount)
+	}
+}
+
 // Desc: Event for the "RESET" button.
 document.getElementById("reset").addEventListener("click", () => {
 	let inputBoxes = document.getElementsByTagName("input")
 	let percents = document.getElementsByName("percent")
+	let table = document.getElementById("table")
 
 	// Clear all the input boxes.
 	for (let i = 0; i < inputBoxes.length; i++) {
@@ -80,6 +111,14 @@ document.getElementById("reset").addEventListener("click", () => {
 	// Clear the percent column.
 	for (let i = 0; i < percents.length; i++) {
 		percents[i].innerHTML = ""
+	}
+
+	// Reset the table to 4 rows
+	while (table.rows.length - 1 < 4) {
+		addOneRow()
+	}
+	while (table.rows.length - 1 > 4) {
+		removeOneRow()
 	}
 
 	// Make the result panel invisible.
@@ -172,3 +211,16 @@ document.getElementById("cal-mean").addEventListener("click", () => {
 		document.querySelector("span[class='mean-val']").innerText = errMsg
 	}
 })
+
+// Desc: Event for the "Add Activity".
+document.getElementById("addActivity").addEventListener("click", () => {
+	addOneRow()
+})
+
+// Desc: Event for the "Remove Activity".
+document.getElementById("removeActivity").addEventListener("click", () => {
+	removeOneRow()
+})
+
+// End of calculator.js
+

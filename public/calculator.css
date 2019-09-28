@@ -83,6 +83,19 @@ input {
 	font-size: 20px;
 }
 
+a {
+	color: #a6192e;
+	font-family: "DINWeb",sans-serif;
+	font-size: 0.8em;
+	text-decoration: none;
+	padding-left: 1.5em;
+}
+
+.activity-button-container {
+	text-align: right;
+	margin-right: 1em;
+}
+
 .mean-result, .weighted-result {
 	/*display: inline-block;*/
 	display: none;
